@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.wrapper{
+    width:100%;
+    height: 30vh;
+    background-image: url('./assets/images/pattern-bg-desktop.png');    
+    @apply bg-emerald-900 flex flex-col items-center gap-10;
+}
+.title{
+    @apply text-center text-white text-xl font-semibold
+}
+.search{
+    width: fit-content;
+    height: 35px;
+    @apply flex 
+}
+.search input{
+    @apply w-[350px] flex items-center bg-white rounded-l-lg placeholder:text-[10px] placeholder:font-semibold
+
+}
+.search button{
+    @apply w-[35px] bg-black grid place-content-center rounded-r-lg
+}
+.info{
+    @apply flex gap-4
+}
+#map{
+    height: 70vh;
+}
