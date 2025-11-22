@@ -1,20 +1,13 @@
-// var map = L.map('map').setView([51.505, -0.09], 13);
-// let marker;
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
-// export function updateMap(lat,lng){
-//     map.setView([lat,lng] ,13);
-//     if(marker) marker.remove();
-//     marker = L.marker([lat,lng]).addTo(map);
-// }
-
 import L from "leaflet";
-
+import locIcon  from './assets/images/icon-location.svg';
 let map;
-
+let w = 46/1.5;
+let h = 56/1.5;
+let myIcon = L.icon({
+  iconUrl: locIcon,
+  iconSize: [w, h],
+  iconAnchor: [w/2,h],
+})
 export function updateMap(lat, lng) {
   if (!map) {
     map = L.map("map").setView([lat, lng], 13);
@@ -26,5 +19,5 @@ export function updateMap(lat, lng) {
     map.setView([lat, lng], 13);
   }
 
-  L.marker([lat, lng]).addTo(map);
+  L.marker([lat, lng],{icon : myIcon}).addTo(map);
 }

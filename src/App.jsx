@@ -55,7 +55,7 @@ function App(){
                 </div>
             </div>
         </div>
-        <div id="map" className='h-100'></div>
+        <div id="map" className='z-0'></div>
         </>
     )
 }
